@@ -2,10 +2,11 @@
 
 \usepackage[style=authoryear, backend=biber]{biblatex}
 \usepackage[swedish]{babel}
-\usepackage{amsmath}
+\usepackage{amsmath, amssymb}
 \usepackage{siunitx}
 \usepackage[version=4]{mhchem}
 \usepackage{csquotes}
+\usepackage{graphicx}
 
 \addbibresource{references.bib}
 \stepcounter{section}
@@ -15,45 +16,39 @@
 }
 \DeclareSIUnit\clight{\text{c}}
 
+% \titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
+% \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
+% \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+\title{Laboration i radioaktivitet}
+\author{
+    \begin{tabular}{l l l}
+        Arvid Persson       & arvper-3@student.ltu.se & 040215 \\
+        Saly Boktor         &                         &        \\
+        Bernhard Rosenzweig &                         &
+    \end{tabular}
+}
+
 \begin{document}
 
-a
+\maketitle
+\thispagestyle{empty}
+\newpage
 
+\begin{abstract}
+\end{abstract}
+\newpage
 
-% 22.0 g tom
-% 40.0 g svamp
-% 88.0 g salt
+% TODO: ska det finnas innehållsförteckning? Före eller efter abstract?
+\tableofcontents
+\thispagestyle{empty}
+\newpage
 
-% Svamp Kiev 2002
-% 10977, 13.7 Hz
-% FWHM: 0.0544
-% std. 0.0239
-% cent. 0.659 MeV
-% 804 s
-
-% salt
-% 314, 1.05 Hz
-% FWHM: 0.064
-% std. 0.0294
-% cent, 1.455 MeV
-% 300 s
-
-% Cs stav
-% 1605, 3.40 Hz
-% FWHM: 9.84
-% std. 7.59
-% cent. 360.654
-% 600 s
-
-% Cs K
-% cent. 0.624 MeV
-% std. 0.00735
-% FWHM 0.0172
-
-% Cs L
-% cent. 0.657 MeV
-% std. 0.00535
-% FWHM 0.0138
+\include{inledning}
+\include{teori}
+\include{metod}
+\include{resultat}
+\include{diskussion}
 
 \newpage
 \printbibliography
