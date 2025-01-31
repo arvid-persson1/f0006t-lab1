@@ -42,11 +42,11 @@
 \thispagestyle{empty}
 \newpage
 
-\input{introduction}
-\input{theory}
-\input{method}
-\input{results}
-\input{discussion}
+\include{introduction}
+\include{theory}
+\include{method}
+\include{results}
+\include{discussion}
 
 \newpage
 \printbibliography
@@ -56,8 +56,9 @@
 \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \begin{appendices}
 
-\input{seltin}
-\input{energy}
+\include{appendices/seltin}
+\include{appendices/energy}
+\include{appendices/speed}
 
 \end{appendices}
 

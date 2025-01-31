@@ -1,0 +1,47 @@
+\section{Maximal elektronhastighet vid Cs-137-sönderfall} \label{sec:speed}
+
+Elektronernas maxhastighet för $\beta^-$-sönderfall av Cs-137 ska beräknas
+uttryckt i ljushastigheten.
+
+\subsection{Konstanter}
+
+\begin{align*}
+    & \text{Ljusets hastighet}     & c   = \qty{299792458}{\m\per\s}                  &\quad \text{(\cite{fysika}, Te)}   \\
+    & \text{Elektronmassa}         & m_e = \qty{0.510998950}{\MeV\per\clight\squared} &\quad \text{(\cite{fysika}, Te)}   \\
+    & \text{Maximal rörelseenergi} & K   = \qty{1.17554556}{\MeV}                     &\quad \text{(Bilaga~\ref{sec:energy})}
+\end{align*}
+
+\subsection{Formler}
+
+\begin{align}
+    \gamma &= \frac{1}{\sqrt{1 - v^2/c^2}} &\quad \text{(\cite{fysika}, Fd1)} \label{eq:lorentz} \\
+         K &= mc^2(\gamma - 1)             &\quad \text{(\cite{fysika}, Fd1)} \label{eq:kinetic}
+\end{align}
+
+\subsection{Lösning}
+
+Av \eqref{eq:kinetic} fås Lorentzfaktorn $\gamma$:
+
+\begin{equation}
+    K = m_e c^2(\gamma - 1) \iff \gamma = \frac{K}{m_e c^2} + 1 \label{eq:lorentz2}
+\end{equation}
+
+Av \eqref{eq:lorentz} fås hastigheten $v$:
+
+\begin{equation}
+    \gamma = \frac{1}{\sqrt{1 - v^2/c^2}} \iff v = c \sqrt{1 - \frac{1}{\gamma^2}}~\text{(\unit{\m\per\s})} \label{eq:speed}
+\end{equation}
+
+\eqref{eq:lorentz2} i \eqref{eq:lorentz} ger:
+
+\begin{equation}
+    v = c \sqrt{1 - \left( \frac{K}{m_e c^2} + 1 \right)^2}~\text{(\unit{\m\per\s})}
+\end{equation}
+
+$v$ söks uttryckt i $c$:
+
+\begin{equation}
+    \frac{v}{c} \approx \num{0.952995087}
+\end{equation}
+
+Resultat: \qty{0.952995087}{\clight}
