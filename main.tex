@@ -42,21 +42,23 @@
 \thispagestyle{empty}
 \newpage
 
-\input{inledning}
-\input{teori}
-\input{metod}
-\input{resultat}
-\input{diskussion}
+\input{introduction}
+\input{theory}
+\input{method}
+\input{results}
+\input{discussion}
 
 \newpage
 \printbibliography
 
 \newpage
 \renewcommand{\appendixpagename}{Bilagor}
+\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \begin{appendices}
-\input{seltin}
-\end{appendices}
 
-% \addcontentsline{toc}{section}{Bilaga A: Fullständiga mätdata}
+\input{seltin}
+\input{energy}
+
+\end{appendices}
 
 \end{document}
