@@ -1,24 +1,20 @@
 \documentclass{article}
 
 \usepackage[style=authoryear, backend=biber]{biblatex}
-\usepackage[swedish]{babel}
 \usepackage{amsmath, amssymb}
 \usepackage{siunitx}
 \usepackage[version=4]{mhchem}
 \usepackage{csquotes}
 \usepackage{graphicx}
+\usepackage[titletoc, page]{appendix}
+\usepackage[swedish]{babel}
 
 \addbibresource{references.bib}
-\stepcounter{section}
 \sisetup{
     output-decimal-marker = {,},
     exponent-product = {\cdot}
 }
 \DeclareSIUnit\clight{\text{c}}
-
-% \titleformat{\section}{\normalfont\Large\bfseries}{\thesection.}{1em}{}
-% \titleformat{\subsection}{\normalfont\large\bfseries}{\thesubsection}{1em}{}
-% \titleformat{\subsubsection}{\normalfont\normalsize\bfseries}{\thesubsubsection}{1em}{}
 
 \title{Laboration i radioaktivitet}
 \author{
@@ -44,13 +40,21 @@
 \thispagestyle{empty}
 \newpage
 
-\include{inledning}
-\include{teori}
-\include{metod}
-\include{resultat}
-\include{diskussion}
+\input{inledning}
+\input{teori}
+\input{metod}
+\input{resultat}
+\input{diskussion}
 
 \newpage
 \printbibliography
+
+\newpage
+\renewcommand{\appendixpagename}{Bilagor}
+\begin{appendices}
+\input{seltin}
+\end{appendices}
+
+% \addcontentsline{toc}{section}{Bilaga A: Fullständiga mätdata}
 
 \end{document}
