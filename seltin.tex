@@ -1,0 +1,71 @@
+\section{Teoretisk beräkning av aktivitet i Seltin} \label{sec:seltin}
+
+Hälsosaltet Seltin består till massan \qty{21}{\percent} av naturligt Kalium.
+Aktiviteten i \qty{66.0}{\g} Seltin som följd av K-40-innehållet ska beräknas.
+
+\subsection{Indata}
+
+\subsubsection{Givet}
+
+\begin{align*}
+    & \text{Massa Seltin}          & m_S = \qty{0.066}{\kg} \\
+    & \text{Andel Kalium i Seltin} & r_S = \qty{21}{\percent}
+\end{align*}
+
+\subsubsection{Konstanter}
+
+\begin{align*}
+    & \text{Andel K-40 i naturligt Kalium} & r_K     = \qty{0.0117}{\percent}     &\quad \text{(\cite{fysika}, Tk4)} \\
+    & \text{Nuklidmassa K-40}              & M       = \qty{39.9639982}{\atomicmassunit}  &\quad \text{(\cite{fysika}, Tk4)} \\
+    & \text{Halveringstid K-40}            & T_{1/2} = \qty{1.248}{\giga\scyear} &\quad \text{(\cite{fysika}, Tk4)}
+\end{align*}
+
+\subsection{Enhetsomvandlingar}
+
+\begin{align*}
+    & \qty{1}{\scyear} &= \qty{31557600}{\s}         &\quad \text{(\cite{fysika}, Te)} \\
+    & \qty{1}{\atomicmassunit} &= \qty{1.66053907e-27}{\kg} &\quad \text{(\cite{fysika}, Te)}
+\end{align*}
+
+\subsection{Formler}
+
+\begin{align}
+    M       &= \frac{m}{N}           &\quad \text{(\cite{fysika}, Fa2)}  \label{eq:molmass} \\
+    A       &= \lambda N             &\quad \text{(\cite{fysika}, Fd2b)} \label{eq:activity}  \\
+    T_{1/2} &= \frac{\ln 2}{\lambda} &\quad \text{(\cite{fysika}, Fd2b)} \label{eq:halflife}
+\end{align}
+
+\subsection{Lösning}
+
+Mängden kalium $m_K$ är andelen kalium i Seltin gånger massan Seltin;
+
+\begin{equation}
+    m_K = m_S r_S~\text{(\unit{\kg})} \label{eq:kmass}
+\end{equation}
+
+Mängden K-40 $m$ är andelen K-40 i naturligt kalium gånger massan Kalium;
+
+\begin{equation}
+    m = m_K r_K~\text{(\unit{\kg})} \label{eq:k40mass}
+\end{equation}
+
+Av \eqref{eq:molmass} fås substansmängden $N$:
+
+\begin{equation}
+    M = \frac{m}{N} \iff N = \frac{m}{M} \label{eq:substance}
+\end{equation}
+
+Av \eqref{eq:halflife} fås sönderfallskonstanten $\lambda$:
+
+\begin{equation}
+    T_{1/2} = \frac{\ln 2}{\lambda} \iff \lambda = \frac{\ln 2}{T_{1/2}}~\text{(\unit{\per\s})} \label{eq:decay}
+\end{equation}
+
+\eqref{eq:decay} och \eqref{eq:substance}, sen \eqref{eq:k40mass}, sen
+\eqref{kmass} i \eqref{eq:activity} ger aktiviteten $A$:
+
+\begin{equation}
+    A = \lambda N = \frac{m_S r_S r_K \ln 2}{M T_{1/2}} \approx \qty{4.3e2}{\becquerel}
+\end{equation}
+
+Resultat: \qty{4.3e2}{\becquerel}.

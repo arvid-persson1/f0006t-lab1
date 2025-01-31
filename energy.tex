@@ -1,0 +1,59 @@
+\section{Maximal elektronenergi vid Cs-137-sönderfall} \label{sec:energy}
+
+Elektronernas maxenergi för de båda $\beta^-$-sönderfallen av Cs-137 ska
+beräknas. Reaktionerna sker som följande:
+
+\begin{align}
+    \ce{^137_55Cs} &\xrightarrow{\qty{5.6}{\percent}}  \ce{^137_56Ba} + e^- + \bar{\nu}_e   \label{csdecay1} \\
+    \ce{^137_55Cs} &\xrightarrow{\qty{94.4}{\percent}} \ce{^137_56Ba^*} + e^- + \bar{\nu}_e \label{csdecay2}
+\end{align}
+
+\subsection{Konstanter}
+
+\begin{align*}
+    & \text{Ljusets hastighet}        & c        = \qty{299792458}{\m\per\s}         &\quad \text{(\cite{fysika}, Te)}   \\
+    & \text{Nuklidmassa Cs-137}       & M_{Cs}   = \qty{136.907089}{\atomicmassunit} &\quad \text{(\cite{fysika}, Tk4)}  \\
+    & \text{Nuklidmassa Ba-137}       & M_{Ba}   = \qty{136.905827}{\atomicmassunit} &\quad \text{(\cite{fysika}, Tk4)}  \\
+    & \text{Excitationsenergi Ba-137} & E_\gamma = \qty{0.661657}{\MeV}              &\quad \text{\parencite{instructions}}
+\end{align*}
+
+\subsection{Enhetsomvandlingar}
+
+\begin{align*}
+    & \qty{1}{\atomicmassunit} = \qty{931.494103}{\MeV\per\clight\squared} \quad \text{(\cite{fysika}, Te)}
+\end{align*}
+
+\subsection{Formler}
+
+\begin{align}
+    Q &= (M_A - M_B)c^2 &\quad \text{(\cite{fysika}, Fd2a)} \label{freed}
+\end{align}
+
+\eqref{freed} gäller för reaktioner på formen $A \longrightarrow B$.
+
+\subsection{Lösning}
+
+I \eqref{csdecay1} sker endast ett $\beta^-$-sönderfall (inre konversion). Den
+frigjorda energin omvandlas till kinetisk energi som fördelas mellan de
+resulterande partiklarna. Den teoretiska maxenergin för elektronen är då
+bariumatomen och antineutrinon får rörelseenergi godtyckligt nära noll, alltså
+får elektronen all frigjord energi $Q$, som bestäms av \eqref{freed}:
+
+\begin{equation}
+    Q = (M_{Cs} - M_{Ba} - M_{\bar{\nu}_e})c^2 \approx (M_{Cs} - M_{Ba})c^2 \approx \qty{1.17554556}{\MeV}
+\end{equation}
+
+Notera att elektronmassan är medräknad i bariumatomens nuklidmassa, detta
+eftersom den resulterande bariumatomen är joniserad medan tabellvärdet är
+för en oladdad atom. Notera även att även antineutrinomassan räknas bort då
+dess viloenergi, och därmed massa, är försumbar (\cite{fysika}, Tk2).
+
+I \eqref{csdecay2} gäller samma princip, men energin $E_\gamma$ förblir i
+dotterkärnan efter det första sönderfallet. Den maximala energin $E_m$ till
+elektronen fås då som:
+
+\begin{equation}
+    E_m = Q - E_\gamma \approx \qty{0.513889}{\MeV}
+\end{equation}
+
+Resultat: \qty{1.17554556}{\MeV} respektive \qty{0.513889}{\MeV}.
