@@ -1,17 +1,28 @@
 MAIN = main
+TARGET_DIR = target
+MAIN_TEX = ./tex/$(MAIN).tex
+MAIN_PDF = $(TARGET_DIR)/$(MAIN).pdf
+BIB = ./references.bib
 
-TRASH = *.aux $(MAIN).bcf $(MAIN).log $(MAIN).run.xml $(MAIN).bbl $(MAIN).blg $(MAIN).toc
+TEXINPUTS := ./tex//:
+export TEXINPUTS
 
-$(MAIN).pdf: *.tex appendices/*.tex references.bib
-	pdflatex $(MAIN) > /dev/null
-	biber    $(MAIN) > /dev/null
-	pdflatex $(MAIN) > /dev/null
-	pdflatex $(MAIN)
+TRASH = *.aux $(MAIN).blg $(MAIN).run.xml $(MAIN).bbl $(MAIN).log $(MAIN).toc $(MAIN).bcf
+
+all: $(MAIN_PDF)
+
+$(MAIN_PDF): $(MAIN_TEX) $(BIB)
+	mkdir -p $(TARGET_DIR)
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX) > /dev/null
+	biber $(TARGET_DIR)/main -q
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX) > /dev/null
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX)
 
 .PHONY: fast
 fast:
-	pdflatex $(MAIN)
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX)
 
 .PHONY: clean
 clean:
-	rm -f $(TRASH)
+	rm -f $(foreach f,$(TRASH),$(TARGET_DIR)/$(f))
+
