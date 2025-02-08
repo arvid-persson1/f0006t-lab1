@@ -9,7 +9,7 @@ import numpy as np
 from matplotlib.typing import ColorType
 from numpy.typing import ArrayLike
 
-mpl.rc("font", **{"size": 16})
+mpl.rc("font", **{"size": 24})
 
 
 def parse(path: str, trim: bool = True) -> Sequence[tuple[int, int]]:

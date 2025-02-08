@@ -9,9 +9,7 @@ export TEXINPUTS
 
 TRASH = *.aux $(MAIN).blg $(MAIN).run.xml $(MAIN).bbl $(MAIN).log $(MAIN).toc $(MAIN).bcf
 
-all: $(MAIN_PDF)
-
-$(MAIN_PDF): $(MAIN_TEX) $(BIB)
+all:
 	mkdir -p $(TARGET_DIR)
 	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX) > /dev/null
 	biber $(TARGET_DIR)/main -q

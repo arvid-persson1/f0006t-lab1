@@ -7,12 +7,15 @@
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage[titletoc, page]{appendix}
+\usepackage{subcaption}
 \usepackage[swedish]{babel}
 
 \addbibresource{references.bib}
 \sisetup{
     output-decimal-marker = {,},
-    exponent-product = {\cdot}
+    exponent-product = \cdot,
+    range-phrase = --,
+    list-pair-separator = \text{ och }
 }
 \DeclareSIUnit\clight{\text{c}}
 \DeclareSIUnit\atomicmassunit{u}
@@ -53,7 +56,7 @@
 
 \newpage
 \renewcommand{\appendixpagename}{Bilagor}
-\addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
+% \addtocontents{toc}{\protect\setcounter{tocdepth}{1}}
 \begin{appendices}
 
 \include{seltin}
