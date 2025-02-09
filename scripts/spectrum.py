@@ -1,13 +1,8 @@
 from typing import Optional, Sequence
 
-# from bisect import bisect_left
-# from itertools import dropwhile, takewhile
-# from sys import argv
-# from typing import Optional
-#
 import matplotlib as mpl
 import matplotlib.pyplot as plt
-from dataset import Dataset
+from dataset import *
 from numpy import linspace
 
 
@@ -16,7 +11,8 @@ def plot(
     title: Optional[str] = None,
     centroids: Sequence[float] = (),
 ):
-    plt.bar(data.bins, data.counts, width=data.coeff)
+    bins, counts = zip(*data.data)
+    plt.bar(bins, counts, width=data.diff)
 
     plt.xlabel("Energi (MeV)")
     plt.ylabel("Pulser")
@@ -42,12 +38,10 @@ def plot(
 def main():
     mpl.rc("font", **{"size": 24})
 
-    # Windas doesn't export the proper values for the x-axis, but uses some
-    # internal integer representation. These are the results of fitting
-    # those values to the images using linear regression.
-    cesium = Dataset("../data/cesium.asc", 0.00174419784066, -8.6097261836e-7)
-    salt = Dataset("../data/salt.asc", 0.00609620691562, -0.0623730759475)
-    mushrooms = Dataset("../data/mushrooms.asc", 0.00609756097561, -0.0621951219512)
+    nonzero = lambda e: e[1] != 0
+    cesium.trim(nonzero)
+    salt.trim(nonzero)
+    mushrooms.trim(nonzero)
 
     plot(cesium)
     plot(
