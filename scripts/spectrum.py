@@ -9,7 +9,7 @@ from numpy import linspace
 def plot(
     data: Sequence[tuple[int, int]],
     title: Optional[str] = None,
-    centroids: Sequence[float] = (),
+    lines: Sequence[tuple[str, float]] = (),
 ):
     bins, counts = zip(*data.data)
     plt.bar(bins, counts, width=data.diff)
@@ -19,14 +19,14 @@ def plot(
     if title is not None:
         plt.title(title)
 
-    if centroids:
+    if lines:
         colors = plt.get_cmap("plasma")
-        colors = tuple(colors(i) for i in linspace(0.1, 0.7, len(centroids)))
+        colors = tuple(colors(i) for i in linspace(0.1, 0.7, len(lines)))
 
-        for i, (label, centroid, std) in enumerate(centroids):
+        for i, (label, x) in enumerate(lines):
             plt.axvline(
-                centroid,
-                label=f"{label} (cent. {centroid}, std. {std})",
+                x,
+                label=label,
                 color=colors[i],
             )
 
@@ -46,15 +46,16 @@ def main():
     plot(cesium)
     plot(
         cesium,
-        centroids=(
-            ("K-toppen", 0.624, 0.00735),
-            ("L-toppen", 0.657, 0.00535),
+        lines=(
+            ("Centroid K-toppen", 0.624),
+            ("Centroid L-toppen", 0.657),
+            ("Approximativ maximal sönderfallsenergi", 0.68),
         ),
     )
     plot(salt)
-    plot(salt, centroids=(("K-40", 1.455, 0.0294),))
+    plot(salt, lines=(("Centroid K-40", 1.455),))
     plot(mushrooms)
-    plot(mushrooms, centroids=(("Cs-137", 0.659, 0.0239),))
+    plot(mushrooms, lines=(("Centroid Cs-137", 0.659),))
 
 
 if __name__ == "__main__":
