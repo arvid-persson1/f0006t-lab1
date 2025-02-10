@@ -11,9 +11,9 @@ TRASH = *.aux $(MAIN).blg $(MAIN).run.xml $(MAIN).bbl $(MAIN).log $(MAIN).toc $(
 
 all:
 	mkdir -p $(TARGET_DIR)
-	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX) > /dev/null
-	biber $(TARGET_DIR)/main -q
-	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX) > /dev/null
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX)
+	biber $(TARGET_DIR)/main
+	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX)
 	pdflatex -output-directory=$(TARGET_DIR) $(MAIN_TEX)
 
 .PHONY: fast
