@@ -56,7 +56,7 @@ på bara några \unit{\percent}, samt att inte nödvändigtvis alla södnerfall 
 $\gamma$-sönderfall.
 
 Låt $A$ vara den totala aktiviteten, $D$ sannolikheten att en atom
-sönderfaller genom $\gamma$-sönderfall och $K$ känsligheten för någon given
+sönderfaller genom $\gamma$-sönderfall och $k$ känsligheten för någon given
 energinivå $E_0$. Det fås att
 %
 \begin{equation}
@@ -66,25 +66,25 @@ energinivå $E_0$. Det fås att
 där $A_\gamma$ är antalet $\gamma$-sönderfall per sekund. Vidare fås att
 %
 \begin{equation}
-    K = \frac{f}{A_\gamma} \label{eq:sensitivity},
+    k = \frac{f}{A_\gamma} \label{eq:sensitivity},
 \end{equation}
 %
 där $f$ är antalet uppmätta pulser vid $E_0$.
 
 $D$ är för en given isotop en känd konstant, $f$ bestämdes experimentellt
-i avsnitt~\ref{sec:measurements} och $K$ bestämdes som en funktion av
-energinivån $E$ i avsnitt~\ref{sec:sensitivity}. Då $K$ inte är konstant, men
+i avsnitt~\ref{sec:measurements} och $k$ bestämdes som en funktion av
+energinivån $E$ i avsnitt~\ref{sec:sensitivity}. Då $k$ inte är konstant, men
 $f$ är bestämd för några diskreta energinivåer, skrivs \eqref{eq:sensitivity}
 som en summa;
 %
 \begin{equation}
-    A_\gamma = \sum_i \frac{f(E_i)}{K(E_i)} \inlineunit{\becquerel} \quad \text{\parencite{instructions}} \label{eq:sensitivitysum}.
+    A_\gamma = \sum_i \frac{f(E_i)}{k(E_i)} \inlineunit{\becquerel} \quad \text{\parencite{instructions}} \label{eq:sensitivitysum}.
 \end{equation}
 %
 Genom insättning av \eqref{eq:sharegamma} i \eqref{eq:sensitivitysum} fås
 %
 \begin{equation}
-    A = \frac{1}{D} \sum_i \frac{f(E_i)}{K(E_i)} \inlineunit{\becquerel} \quad \text{\parencite{instructions}} \label{eq:activitysum}.
+    A = \frac{1}{D} \sum_i \frac{f(E_i)}{k(E_i)} \inlineunit{\becquerel} \quad \text{\parencite{instructions}} \label{eq:activitysum}.
 \end{equation}
 
 Givet aktiviteten kan provets aktivitet per massa $a$ (då massan är känd)
@@ -111,14 +111,14 @@ För Cs-137 är $T_{1/2} = \qty{30.08}{\scyear}$ \fysika{Tk4},
 $D = \num{0.851}$ \parencite{instructions} och för provet $m = \qty{18.0}{\g}$
 (se avsnitt~\ref{sec:measurements}). Energinivåerna är i intervallet vars
 känslighet uppskattas av \eqref{eq:line1}. Detta ger en aktivitet per massa
-$a_{Cs} \approx \qty{1.8e4}{\becquerel}$ och en substansmängd
+$a_{Cs} \approx \qty{1.8e4}{\becquerel\per\kg}$ och en substansmängd
 $N_{Cs} \approx \num{4.4e11}$.
 
 För K-40 är motsvarande värden $T_{1/2} = \qty{1.248}{\giga\scyear}$
 \fysika{Tk4}, $D = \num{0.1067}$ \parencite{instructions}, $m = \qty{70.0}{\g}$
 (avsnitt~\ref{sec:measurements}). Energinivåerna är i intervallet vars
 känslighet uppskattas av \eqref{eq:line2}. Detta ger en aktivitet per massa
-$a_K \approx \qty{6.3e3}{\becquerel}$ och en substansmängd
+$a_K \approx \qty{6.3e3}{\becquerel\per\kg}$ och en substansmängd
 $N_K \approx \num{2.5e19}$.
 
 \subsubsection{Maximal sönderfallsenergi i betaspektrumet} \label{sec:betamax}
