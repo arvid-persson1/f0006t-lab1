@@ -1,0 +1,29 @@
+\section{Elektronenergi vid inre konversion} \label{sec:conenergy}
+
+Energin för elektronerna som kommer från inre konversion i K- respektive
+L-skalet i sönderfall av Cs-137 ska bestämmas.
+
+\subsection*{Konstanter}
+
+\begin{align*}
+    & \text{Excitationsenergi Ba-137}      & E_\gamma = \qty{0.661657}{\MeV} &\quad \text{(avsnitt~\ref{sec:theory})} \\
+    & \text{Elektronbindningsnergi Ba (K)} & E_{BK}   = \qty{37441}{\eV}     &\quad \fysika{Tk1}                      \\
+    & \text{Elektronbindningsnergi Ba (L)} & E_{BL}   = \qty{5247}{\eV}      &\quad \fysika{Tk1}
+\end{align*}
+
+\subsection*{Formler}
+
+\begin{align}
+    E_e &= E_\gamma - E_B &\quad \text{\parencite{instructions}} \label{eq:electronenergy}
+\end{align}
+
+\subsection*{Lösning}
+
+Av \eqref{eq:electronenergy} fås elektronenergierna $E_{eK}$ och $E_{eL}$:
+%
+\begin{align}
+    E_{eK} &= E_\gamma - E_{BK} \approx \qty{6.2422e5}{\eV} \\
+    E_{eL} &= E_\gamma - E_{BL} \approx \qty{6.564e5}{\eV}
+\end{align}
+
+Resultat: \qty{0.62422}{\MeV} respektive \qty{0.6564}{\MeV}.
